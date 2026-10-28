@@ -24,23 +24,12 @@ public:
         return visited[i][j][val]=min(left,right);
     }
     int minCost(vector<vector<int>>& grid) {
-    int maxi = 0;
-
-for (auto &row : grid) {
-    for (int x : row) {
-        maxi = max(maxi, x);
-    }
-}
-
-int MAX_XOR = 1;
-while (MAX_XOR <= maxi) {
-    MAX_XOR *= 2;
-}
+  
         int n=grid.size();
         int m=grid[0].size();
 
       vector<vector<vector<int>>> visited(
-    n, vector<vector<int>>(m, vector<int>(MAX_XOR, -1))
+    n, vector<vector<int>>(m, vector<int>(1024, -1))
 );
         int val=grid[0][0];
         int ans=solve(grid,visited,0,0,n,m,val);
