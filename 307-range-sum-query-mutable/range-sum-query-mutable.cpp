@@ -38,7 +38,8 @@ public:
     }
     
     int sumRange(int left, int right) {
-        return query(right+1)-query(left);
+       int val=-query(left)+query(right+1);
+        return val;
        
         
     }
